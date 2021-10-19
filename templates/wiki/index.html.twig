@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}WikiQuiMarche index{% endblock %}
+
+{% block body %}
+    <link rel="stylesheet" type="text/css" href="{{asset('css/styleIndexs.css')}}">
+    <h1>Wiki</h1>
+
+    <table class="table">
+
+        <tbody>
+        {% for wiki in wikis %}
+            <tr>
+
+                <td id="titre">{{ wiki.nom }}</td>
+                <td><img src="media/actualite/{{ wiki.file|raw }}"></td>
+                <td>{{ wiki.description |raw}}</td>
+
+
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Aucuns personnages/armes trouvés !</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+  {% endblock %}

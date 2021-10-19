@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Record index{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{asset('css/StyleIndexs.css')}}">
+{% endblock %}
+{% block body %}
+    <h1>Record index</h1>
+
+          <table class="table">
+
+        <tbody>
+        {% for record in records %}
+            <tr>
+
+                <td id="titre">{{ record.titre }}</td>
+                <td>{{ record.lien |raw}}</td>
+                <td>{{ record.contenu |raw }}</td>
+                <td>{{ record.date ? record.date|date('Y-m-d') : '' }}</td>
+                      </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

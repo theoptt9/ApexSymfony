@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}News index{% endblock %}
+
+{% block body %}
+    {% block stylesheets %}
+
+        <link rel="stylesheet"
+              type="text/css"
+              href="{{ asset('css/styleActualite.css') }}">
+    {% endblock %}
+    <h1>Actualités</h1>
+
+    <table class="table">
+
+        <tbody>
+        {% for news in news %}
+            <tr>
+                <div class="tagTitre">
+                    <td id="titre">{{ news.titre }}</td>
+
+                </div>
+                <td class="image"><img src="/media/actualite/{{ news.file|raw}}"></td>
+                <div id="contenu">
+                    <td>{{ news.contenu |raw }}</td>
+                </div>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">
+                    no
+                    records
+                    found
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

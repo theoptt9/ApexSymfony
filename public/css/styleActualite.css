@@ -1,0 +1,63 @@
+
+#record, #news, .finForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+tr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+#lienCreate {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+body {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+
+}
+
+iframe {
+    width: 500px;
+    height: 500px;
+}
+
+#titre {
+    margin-top: 50px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+img {
+    width: 500px;
+}
+

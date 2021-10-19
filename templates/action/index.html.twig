@@ -1,0 +1,35 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Video index{% endblock %}
+
+{% block stylesheets %}
+
+    <link rel="stylesheet" type="text/css" href="{{asset('css/styleActualite.css')}}">
+
+{% endblock %}
+
+{% block body %}
+
+    <body>
+    <h1>Action de la semaine </h1>
+    <table class="table">
+        <tbody>
+        {% for action in actions %}
+            <tr>
+                <td id="titre">{{ action.nom }}</td>
+                <td id="lien">{{ action.lien|raw }}</td>
+                <div class="contenu">
+                    <td>{{ action.contenu|raw }}</td>
+                </div>
+                {% if app.user %}
+                <td>Mis en ligne par : {{ app.user.username }}</td>
+                {% endif %}
+                <td>Date de mise en ligne : {{ action.date ? action.date|date('Y-m-d') : '' }}</td>
+                       </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+    </body>
+{% endblock %}
